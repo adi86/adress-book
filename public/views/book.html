@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading c-list">
+                <span class="title">Contacts</span>
+                <ul class="pull-right c-controls">
+                    <li><a href="#/add" data-toggle="tooltip" data-placement="top" title="Add Contact"><i class="glyphicon glyphicon-plus"></i></a></li>
+                    <li><a href="#" class="hide-search" searchable data-command="toggle-search" data-toggle="tooltip" data-placement="top" title="Toggle Search"><i class="glyphicon glyphicon-option-vertical"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="row" style="display: none;">
+                <div class="col-xs-12">
+                    <div class="input-group c-search">
+                        <input type="text" class="form-control" placeholder="Szukaj" id="contact-list-search" ng-model="user.search.name">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search text-muted"></span></button>
+                            </span>
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-danger" ng-show="contactRemoved">
+                <strong>Sukces!</strong> Użytkownik usunięty.
+            </div>
+            <ul class="list-group" id="contact-list">
+                <li class="list-group-item" ng-repeat="(key, value) in groups | orderBy:'name':false">
+                    <span ng-bind="key" class="letter"></span>
+                    <ul class="group-contacts">
+                        <li class="list-group-item" ng-repeat="contact in groups[key].contactList | filter:user.search">
+                            <div class="col-xs-12 col-sm-3">
+                                <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="Scott Stevens" class="img-responsive img-circle" />
+                            </div>
+                            <div class="col-xs-12 col-sm-9">
+                                <span class="name" ng-bind="contact.name + ' ' + contact.lastName"></span><br/>
+                                <span class="name" ng-bind="contact.contact.email"></span><br/>
+                                <span class="name" ng-bind="contact.contact.zipCode + ' ' + contact.contact.city"></span><br/>
+                            </div>
+                            <a class="remove-contact" ng-click="removeContact(contact._id)">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

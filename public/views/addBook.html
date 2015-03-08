@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading c-list">
+                <span class="title">Contacts</span>
+                <ul class="pull-right c-controls">
+                    <li><a href="#/add" data-toggle="tooltip" data-placement="top" title="Add Contact"><i class="glyphicon glyphicon-plus"></i></a></li>
+                    <li><a href="#/" class="hide-search" data-command="toggle-search" data-toggle="tooltip" data-placement="top" title="Toggle Search"><i class="glyphicon glyphicon-th-list"></i></a></li>
+                </ul>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-10">
+                        <form name="addContact" class="add-contact-form">
+                            <div class="alert alert-success" ng-show="userAdded">
+                                <strong>Sukces!</strong> Użytkownik dodany.
+                            </div>
+                            <div class="form-group required" ng-class="{'has-error': addContact.name.$invalid && addContact.name.$dirty}">
+                                <label for="inputEmail">Imię</label>
+                                <input required="true" type="text" name="name" class="form-control" id="inputName" placeholder="Imię" ng-model="book.name">
+                            </div>
+                            <div class="form-group required" ng-class="{'has-error': addContact.lastName.$invalid && addContact.lastName.$dirty}">
+                                <label for="inputEmail">Nazwisko</label>
+                                <input required="true" type="text" name="lastName" class="form-control" id="inputSurname" placeholder="Nazwisko" ng-model="book.lastName">
+                            </div>
+                            <div class="form-group required" ng-class="{'has-error': addContact.city.$invalid && addContact.city.$dirty}">
+                                <label for="inputCity">Miasto</label>
+                                <input required="true" type="text" class="form-control" name="city" id="inputCity" placeholder="Miasto" ng-model="book.contact.city">
+                            </div>
+                            <div class="form-group required" ng-class="{'has-error': addContact.zip.$invalid && addContact.zip.$dirty}">
+                                <label for="inputZip">Kod pocztowy</label>
+                                <input required="true" type="text" class="form-control" name="zip" id="inputZip" placeholder="Kod pocztowy" ng-model="book.contact.zipCode">
+                            </div>
+                            <div class="form-group required" ng-class="{'has-error': addContact.street.$invalid && addContact.street.$dirty}">
+                                <label for="inputStreet">Ulica</label>
+                                <input required="true" type="text" class="form-control" name="street" id="inputStreet" placeholder="Ulica" ng-model="book.contact.street">
+                            </div>
+                            <div class="form-group required " ng-class="{'has-error': addContact.email.$invalid && addContact.email.$dirty}">
+                                <label for="inputEmail">Email</label>
+                                <input required="true" type="email" class="form-control" id="inputEmail" placeholder="Email" name="email" ng-model="book.contact.email">
+                            </div>
+                            <button type="submit" ng-click="addBook()" ng-disabled="addContact.$invalid" class="btn btn-primary">Zapisz</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

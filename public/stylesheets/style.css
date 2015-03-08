@@ -1,0 +1,77 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+li{
+  list-style: none;
+}
+
+.navbar{
+  background: #51b4e3;
+}
+
+.navbar a{
+  text-align: center;
+  color: #FFF;
+}
+.navbar .nav li a:hover,
+.navbar .nav li a:active,
+.navbar .nav li a:focus{
+  background-color: #51b4e3;
+}
+
+.c-controls li{
+  float: left;
+  padding: 0 3px;
+}
+
+#contact-list-search,
+.c-search button{
+  border-radius: 0;
+}
+
+#contact-list .letter{
+  display: block;
+  padding: 5px 0;
+  border-bottom: 2px solid #269abc;
+  font-size: 18px;
+  font-weight: bold;
+
+}
+
+.group-contacts .list-group-item:first-child{
+border-top: 0;
+}
+
+.add-contact-form{
+padding: 15px 0;
+}
+
+.form-group.required label:after {
+content:"*";
+color:red;
+}
+
+.group-contacts .list-group-item .remove-contact{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -10px;
+  color: red;
+  display: none;
+  cursor: pointer ;
+  font-size: 20px;
+}
+
+.group-contacts .list-group-item .remove-contact:hover{
+  color: red;
+}
+
+.group-contacts .list-group-item:hover .remove-contact{
+  display: block;
+}
